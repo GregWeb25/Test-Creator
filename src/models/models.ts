@@ -27,6 +27,10 @@ export interface ICheckingPayload{
     answerOptionsId: number
 }
 
+export interface IConfirmingPayload{
+    testId: number,
+}
+
 export interface  ITestsList {
     tests: ITest[]
 }
