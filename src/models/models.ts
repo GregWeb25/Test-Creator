@@ -44,3 +44,7 @@ export interface IOptionProps {
     option: IAnswerOption,
     test: ITest,
 }
+
+export interface IResults {
+    enough: number,
+}

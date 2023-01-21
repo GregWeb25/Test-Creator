@@ -58,6 +58,28 @@ const tests: ITest[] = [
     isPassed: false,
     isFailed: false,
 },
+    {
+        id: 2,
+        text: "What return this expression: \" 0 === false \" ",
+        weight: 100,
+        typeOfTest: TestTypes.single,
+        answerOptions: [
+            {
+                id: 0,
+                text: "false",
+                isRight: false,
+                isChecked: false,
+            },
+            {
+                id: 1,
+                text: "true",
+                isRight: true,
+                isChecked: false,
+            },
+        ],
+        isPassed: false,
+        isFailed: false,
+    },
 ]
 
 const initialTest = {tests}
@@ -113,8 +135,6 @@ const testsSlice = createSlice({
                 testPath!.isPassed = false;
                 testPath!.isFailed = true;
             }
-            console.log(testPath!.isPassed);
-            console.log(testPath!.isFailed);
 
         }
 

@@ -36,7 +36,7 @@ const SingleTest = ({test, index}: ITestProps) => {
                 <button
                     onClick={()=>dispatch(confirming({testId: test.id}))}
                     className="bg-blue-500 px-2 py-1  text-white font-bold mb-1"
-                >Confirm</button>
+                > {test.isPassed ? "Passed" : test.isFailed ? "Failed" : "Confirm"} </button>
             </div>
         </div>
     );

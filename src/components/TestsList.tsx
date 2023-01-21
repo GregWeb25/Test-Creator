@@ -6,9 +6,9 @@ import SingleTest from "./testsComponents/SingleTestComponents/SingleTest";
 import MultipleTest from "./testsComponents/MultipleTestComponents/MultipleTest";
 
 const TestsList = () => {
-    const tests = useSelector((state: RootState )=> state.testsReducer.tests);
+    const tests = useSelector((state: RootState )=> state.tests.tests);
     return (
-        <div className="flex flex-col items-center  pt-10  h-screen w-screen text-gray-800 font-medium gap-2">
+        <div className="flex flex-col items-center  pt-10  w-full text-gray-800 font-medium gap-2">
             {tests && tests.map((test: ITest, index: number) => {
                 switch (test.typeOfTest){
                     case TestTypes.single:
@@ -20,6 +20,7 @@ const TestsList = () => {
                         return (
                             <MultipleTest test={test} index={index} key={Date.now()+test.id}/>
                         )
+                    break;
                 }
             })}
 
