@@ -1,9 +1,9 @@
 import React from 'react';
-import {ITest, TestTypes} from "../models/models";
+import {ITest, TestTypes} from "../../models/models";
 import {useSelector} from "react-redux";
-import {RootState} from "../store";
-import SingleTest from "./testsComponents/SingleTestComponents/SingleTest";
-import MultipleTest from "./testsComponents/MultipleTestComponents/MultipleTest";
+import {RootState} from "../../store";
+import SingleTest from "./SingleTestComponents/SingleTest";
+import MultipleTest from "./MultipleTestComponents/MultipleTest";
 
 const TestsList = () => {
     const tests = useSelector((state: RootState )=> state.tests.tests);

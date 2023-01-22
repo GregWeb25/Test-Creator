@@ -1,11 +1,11 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import {RootState} from "../store";
-import {ITest} from "../models/models";
-import getTotalCount from "../utils/getTotalCount";
-import getPercentage from "../utils/getPercentage";
-import getStatus from "../utils/getStatus";
-import getECTS from "../utils/getECTS";
+import {RootState} from "../../store";
+import {ITest} from "../../models/models";
+import getTotalCount from "../../utils/getTotalCount";
+import getPercentage from "../../utils/getPercentage";
+import getStatus from "../../utils/getStatus";
+import getECTS from "../../utils/getECTS";
 
 const ResultsPanel = () => {
     const tests = useSelector((state: RootState) => state.tests.tests);

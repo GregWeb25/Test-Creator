@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Routes, Route} from "react-router-dom";
 import PreviewPage from "./pages/PreviewPage";
-import FavouritesPage from "./pages/FavouritesPage";
+import ConstructorPage from "./pages/ConstructorPage";
 import Navigation from "./components/Navigation";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
             <Navigation/>
             <Routes>
                 <Route path='/' element={<PreviewPage/>}/>
-                <Route path='/constructor' element={<FavouritesPage/>}/>
+                <Route path='/constructor' element={<ConstructorPage/>}/>
             </Routes>
         </div>
     );
