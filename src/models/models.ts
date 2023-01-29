@@ -1,3 +1,4 @@
+import React from "react";
 
 
 export enum TestTypes {
@@ -47,4 +48,10 @@ export interface IOptionProps {
 
 export interface IResults {
     enough: number,
+}
+
+export interface IModalWindowProps {
+    isHidden: boolean,
+    children?: React.ReactNode,
+    hide:(arg1: boolean)=>void
 }
