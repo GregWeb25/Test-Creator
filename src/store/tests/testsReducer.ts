@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {ICheckingPayload, IConfirmingPayload, ITest, TestTypes} from "../../models/models";
+import {ICheckingPayload, IConfirmingPayload, IEditTestPayload, ITest, TestTypes} from "../../models/models";
 
 const tests: ITest[] = [
     {
@@ -31,7 +31,7 @@ const tests: ITest[] = [
     isFailed: false,
 },
     {
-    id: 123,
+    id: 1,
     text: "Choose the correct calculation result: |25| = ...",
     weight: 100,
     typeOfTest: TestTypes.multiple,
@@ -88,6 +88,12 @@ const testsSlice = createSlice({
     name: "tests",
     initialState: initialTest,
     reducers: {
+        addTest(state, action: PayloadAction<ITest>) {
+            state.tests = [...state.tests, action.payload]
+        },
+        editTest(state, action: PayloadAction<IEditTestPayload>) {
+            state.tests[action.payload.index] = action.payload.test;
+        },
         checking(state, action: PayloadAction<ICheckingPayload>) {
             let testPath = state.tests.find(test => test.id === action.payload.testId);
             let optionPath = testPath?.answerOptions.find(answer => answer.id === action.payload.answerOptionsId);
@@ -142,5 +148,5 @@ const testsSlice = createSlice({
 
 });
 
-export  const {checking, confirming} = testsSlice.actions;
+export  const {checking, confirming, addTest, editTest} = testsSlice.actions;
 export default testsSlice.reducer;

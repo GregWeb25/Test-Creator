@@ -19,7 +19,7 @@ const ModalWindow = ({isHidden, children, hide}: IModalWindowProps) => {
                 onClick={(e) => {
                     e.stopPropagation();
                 }}
-                className="z-0 h-auto w-[80%] "
+                className="z-0 h-auto max-h-[80%] w-[80%] overflow-y-scroll"
             >
                 {children}
             </div>

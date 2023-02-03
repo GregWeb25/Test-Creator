@@ -1,4 +1,5 @@
 import React from "react";
+import WarningModal from "../components/constructorComponents/WarningModal";
 
 
 export enum TestTypes {
@@ -20,7 +21,7 @@ export interface ITest {
     answerOptions: IAnswerOption[],
     isPassed: boolean,
     isFailed: boolean,
-    typeOfTest: TestTypes,
+    typeOfTest: string,
 }
 
 export interface ICheckingPayload{
@@ -54,4 +55,28 @@ export interface IModalWindowProps {
     isHidden: boolean,
     children?: React.ReactNode,
     hide:(arg1: boolean)=>void
+}
+
+export interface IEditTestProps {
+    test: ITest,
+    index: number,
+    setModalHidden: (arg1: boolean)=>void,
+}
+
+export interface IEditOptionProps {
+    test: ITest,
+    option: IAnswerOption,
+    setCurrentOptions: (arg1: IAnswerOption[])=>void;
+    index: number,
+    changedOptions: IAnswerOption[]
+}
+
+export interface  IEditTestPayload {
+    test: ITest,
+    index: number
+}
+
+export  interface IWarningModalProps {
+    text: string,
+    setWarningModalHidden: (arg1: boolean) => void
 }

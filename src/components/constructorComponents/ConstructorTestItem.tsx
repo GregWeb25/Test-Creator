@@ -34,7 +34,7 @@ const ConstructorTestItem = ({test, index}: ITestProps) => {
                 <button className="bg-blue-500 px-2 py-1  text-white font-bold mb-1">Delete</button>
             </div>
             <ModalWindow isHidden={modalHidden} hide={setModalHidden}>
-                <EditTest test={test}/>
+                <EditTest test={test} index={index} setModalHidden={setModalHidden}/>
             </ModalWindow>
         </div>
     );
