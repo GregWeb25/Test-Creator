@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { IEditOptionProps} from "../../../../models/models";
 
-const EditOption = ({test, option, setCurrentOptions, index, changedOptions}:IEditOptionProps) => {
+const EditOption = ({option, setCurrentOptions, index, changedOptions}:IEditOptionProps) => {
     const [text, setText] = useState(option.text);
     const [isRight, setIsRight] = useState(option.isRight);
     const input = useRef<HTMLInputElement>(null);

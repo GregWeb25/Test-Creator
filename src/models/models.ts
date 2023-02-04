@@ -1,6 +1,4 @@
 import React from "react";
-import WarningModal from "../components/constructorComponents/WarningModal";
-
 
 export enum TestTypes {
     single = "single",
@@ -64,7 +62,6 @@ export interface IEditTestProps {
 }
 
 export interface IEditOptionProps {
-    test: ITest,
     option: IAnswerOption,
     setCurrentOptions: (arg1: IAnswerOption[])=>void;
     index: number,
@@ -79,4 +76,26 @@ export interface  IEditTestPayload {
 export  interface IWarningModalProps {
     text: string,
     setWarningModalHidden: (arg1: boolean) => void
+}
+
+export  interface  IEditTypeProps {
+    currentType: string,
+    setCurrentType: (arg1: string) => void
+}
+
+export  interface  IEditWeightProps {
+    currentWeight: number,
+    setCurrentWeight: (arg1: number) => void
+}
+
+export  interface  IEditTextProps {
+    currentText: string,
+    setCurrentText: (arg1: string) => void
+}
+
+export  interface  IEditOptionsProps {
+    currentOptions: IAnswerOption[],
+    setCurrentOptions: (arg1: IAnswerOption[]) => void,
+    changedOptions: IAnswerOption[],
+    addOption: () => void
 }
