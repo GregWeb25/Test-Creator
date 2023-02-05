@@ -3,6 +3,7 @@ import {IAnswerOption, ITestProps} from "../../../models/models";
 import MultipleOption from "./MultipleOption";
 import {confirming} from "../../../store/tests/testsReducer";
 import {useAppDispatch} from "../../../store/appDispatch";
+import CustomButton from "../../ui/CustomButton";
 
 const MultipleTest = ({test,  index}:ITestProps) => {
     const dispatch = useAppDispatch();
@@ -33,10 +34,10 @@ const MultipleTest = ({test,  index}:ITestProps) => {
                 <span className="pl-2 h-min font-normal text-gray-600">
                     {test.weight} points are given for this task
                 </span>
-                <button
+                <CustomButton
                     onClick={()=>dispatch(confirming({testId: test.id}))}
-                    className="bg-blue-500 px-2 py-1  text-white font-bold mb-1"
-                >{test.isPassed ? "Passed" : test.isFailed ? "Failed" : "Confirm"}</button>
+                    className="mb-1"
+                >{test.isPassed ? "Passed" : test.isFailed ? "Failed" : "Confirm"}</CustomButton>
             </div>
         </div>
     );

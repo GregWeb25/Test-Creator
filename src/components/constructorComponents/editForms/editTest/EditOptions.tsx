@@ -1,6 +1,7 @@
 import React from 'react';
 import EditOption from "./EditOption";
 import {IEditOptionsProps} from "../../../../models/models";
+import CustomButton from "../../../ui/CustomButton";
 
 const EditOptions = ({currentOptions, setCurrentOptions, changedOptions, addOption}: IEditOptionsProps) => {
     return (
@@ -15,11 +16,11 @@ const EditOptions = ({currentOptions, setCurrentOptions, changedOptions, addOpti
                                 setCurrentOptions={setCurrentOptions} changedOptions={changedOptions}/>
                 )
             })}
-            <button
+            <CustomButton
                 onClick={() => addOption()}
-                className="bg-blue-500 px-2 py-1 w-full  text-white font-bold"
+                className="w-full"
             >Add option
-            </button>
+            </CustomButton>
         </div>
 
 )

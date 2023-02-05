@@ -3,9 +3,13 @@ import {IAnswerOption, ITestProps} from "../../models/models";
 import ConstructorOption from "./ConstructorOption";
 import ModalWindow from "../modals/ModalWindow";
 import EditTest from "./editForms/editTest/EditTest";
+import CustomButton from "../ui/CustomButton";
+import {useAppDispatch} from "../../store/appDispatch";
+import {deleteTest} from "../../store/tests/testsReducer";
 
 const ConstructorTestItem = ({test, index}: ITestProps) => {
     const [modalHidden, setModalHidden] = useState<boolean>(true);
+    const dispatch = useAppDispatch();
     return (
         <div className="bg-white w-[80%] py-1 px-2 flex justify-between items-end">
             <div>
@@ -25,13 +29,14 @@ const ConstructorTestItem = ({test, index}: ITestProps) => {
                 </div>
             </div>
             <div className="flex w-[15vw] h-[100%] items-end justify-end gap-2">
-                <button
-                    onClick={()=>{
-                        setModalHidden(prevState => !prevState);
-                    }}
-                    className="bg-blue-500 px-2 py-1  text-white font-bold mb-1"
-                >Edit</button>
-                <button className="bg-blue-500 px-2 py-1  text-white font-bold mb-1">Delete</button>
+                <CustomButton
+                    onClick={()=>setModalHidden(prevState => !prevState)}
+                    className="mb-1"
+                > Edit</CustomButton>
+                <CustomButton
+                    onClick={()=>dispatch(deleteTest(test.id))}
+                    className="mb-1"
+                > Delete</CustomButton>
             </div>
             <ModalWindow isHidden={modalHidden} hide={setModalHidden}>
                 <EditTest test={test} index={index} setModalHidden={setModalHidden}/>

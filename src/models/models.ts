@@ -99,3 +99,9 @@ export  interface  IEditOptionsProps {
     changedOptions: IAnswerOption[],
     addOption: () => void
 }
+
+export interface ICustomButtonProps<T>{
+    onClick?: T,
+    children?: React.ReactNode | string,
+    className?: string
+}

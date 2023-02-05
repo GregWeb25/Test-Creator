@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {IAnswerOption, IEditTestProps, ITest, TestTypes} from "../../../../models/models";
-import EditOption from "./EditOption";
+import React, {useState} from 'react';
+import {IAnswerOption, IEditTestProps, ITest} from "../../../../models/models";
 import {useAppDispatch} from "../../../../store/appDispatch";
 import {editTest} from "../../../../store/tests/testsReducer";
 import ModalWindow from "../../../modals/ModalWindow";
@@ -11,6 +10,7 @@ import EditType from "./EditType";
 import EditWeight from "./EditWeight";
 import EditText from "./EditText";
 import EditOptions from "./EditOptions";
+import CustomButton from "../../../ui/CustomButton";
 
 const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
     const [currentText, setCurrentText] = useState<string>(test.text);
@@ -18,7 +18,6 @@ const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
     const [currentType, setCurrentType] = useState(test.typeOfTest);
     const [currentOptions, setCurrentOptions] = useState<IAnswerOption[]>(test.answerOptions);
     const dispatch = useAppDispatch();
-    const types = Object.keys(TestTypes);
     let changedOptions: IAnswerOption[] = JSON.parse(JSON.stringify(currentOptions));
     const [warningModalHidden, setWarningModalHidden] = useState<boolean>(true);
     const [warningText, setWarningText] = useState<string>("")
@@ -72,10 +71,10 @@ const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
                 <EditOptions changedOptions={changedOptions} currentOptions={currentOptions} setCurrentOptions={setCurrentOptions} addOption={addOption}/>
             </div>
             <div className="flex justify-end">
-                <button
+                <CustomButton
                     onClick={() => saveTest()}
-                    className="bg-blue-500 px-2 py-1  text-white font-bold mb-1"
-                >Save</button>
+                    className="mb-1"
+                >Save</CustomButton>
             </div>
             <ModalWindow isHidden={warningModalHidden} hide={setWarningModalHidden}>
                 <WarningModal text={warningText} setWarningModalHidden={setWarningModalHidden}/>

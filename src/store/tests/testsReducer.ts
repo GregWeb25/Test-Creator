@@ -91,6 +91,9 @@ const testsSlice = createSlice({
         addTest(state, action: PayloadAction<ITest>) {
             state.tests = [...state.tests, action.payload]
         },
+        deleteTest(state, action: PayloadAction<number>){
+            state.tests = state.tests.filter((test) => test.id === action.payload ? false : true);
+        },
         editTest(state, action: PayloadAction<IEditTestPayload>) {
             state.tests[action.payload.index] = action.payload.test;
         },
@@ -148,5 +151,5 @@ const testsSlice = createSlice({
 
 });
 
-export  const {checking, confirming, addTest, editTest} = testsSlice.actions;
+export  const {checking, confirming, addTest, editTest, deleteTest} = testsSlice.actions;
 export default testsSlice.reducer;
