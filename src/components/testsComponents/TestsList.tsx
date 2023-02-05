@@ -8,7 +8,7 @@ import MultipleTest from "./MultipleTestComponents/MultipleTest";
 const TestsList = () => {
     const tests = useSelector((state: RootState )=> state.tests.tests);
     return (
-        <div className="flex flex-col items-center  pt-10  w-full text-gray-800 font-medium gap-2">
+        <div className="flex flex-col items-center   w-full text-gray-800 font-medium gap-2">
             {tests && tests.map((test: ITest, index: number) => {
                 switch (test.typeOfTest){
                     case TestTypes.single:

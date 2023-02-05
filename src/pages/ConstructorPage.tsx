@@ -6,7 +6,8 @@ import {useAppDispatch} from "../store/appDispatch";
 import {addTest} from "../store/tests/testsReducer";
 import {useSelector} from "react-redux";
 import {RootState} from "../store";
-import {IAnswerOption, TestTypes} from "../models/models";
+import {TestTypes} from "../models/models";
+import ConstructorCommunicationModule from "../components/constructorComponents/CommunicationModule/ConstructorCommunicationModule";
 
 const ConstructorPage = () => {
     const dispatch = useAppDispatch();
@@ -34,6 +35,7 @@ const ConstructorPage = () => {
                 className="w-[80%]"
             > Add </CustomButton>
             <ConstructorResults/>
+            <ConstructorCommunicationModule/>
         </div>
     );
 };

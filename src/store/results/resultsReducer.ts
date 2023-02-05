@@ -15,4 +15,6 @@ export const resultsReducer = createSlice({
     }
 });
 
+export const {setEnough} = resultsReducer.actions;
+
 export default resultsReducer.reducer;

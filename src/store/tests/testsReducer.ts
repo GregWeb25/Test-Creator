@@ -88,6 +88,9 @@ const testsSlice = createSlice({
     name: "tests",
     initialState: initialTest,
     reducers: {
+        setAllTests(state, action: PayloadAction<ITest[]>){
+            state.tests = action.payload;
+        },
         addTest(state, action: PayloadAction<ITest>) {
             state.tests = [...state.tests, action.payload]
         },
@@ -151,5 +154,5 @@ const testsSlice = createSlice({
 
 });
 
-export  const {checking, confirming, addTest, editTest, deleteTest} = testsSlice.actions;
+export  const {checking, confirming, addTest, editTest, deleteTest, setAllTests} = testsSlice.actions;
 export default testsSlice.reducer;
