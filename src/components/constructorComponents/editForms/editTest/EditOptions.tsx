@@ -12,12 +12,16 @@ const EditOptions = ({currentOptions, setCurrentOptions, changedOptions, addOpti
 
             {currentOptions.map((option, index) => {
                 return (
-                    <EditOption key={Date.now() + index} option={option} index={index}
-                                setCurrentOptions={setCurrentOptions} changedOptions={changedOptions}/>
+                    <EditOption
+                        key={Date.now() + index}
+                        option={option} index={index}
+                        setCurrentOptions={setCurrentOptions}
+                        changedOptions={changedOptions}
+                    />
                 )
             })}
             <CustomButton
-                onClick={() => addOption()}
+                onClick={() => setCurrentOptions(addOption(currentOptions, changedOptions))}
                 className="w-full"
             >Add option
             </CustomButton>

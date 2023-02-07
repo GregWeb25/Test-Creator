@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { IEditOptionProps} from "../../../../models/models";
 import CustomButton from "../../../ui/CustomButton";
+import deleteOption from "../../../../utils/deleteOption";
 
 const EditOption = ({option, setCurrentOptions, index, changedOptions}:IEditOptionProps) => {
     const [text, setText] = useState(option.text);
@@ -11,11 +12,6 @@ const EditOption = ({option, setCurrentOptions, index, changedOptions}:IEditOpti
         setTimeout(()=>{
             input.current!.focus();
         },1);
-    }
-
-    const deleteOption = ( ) => {
-        changedOptions.splice(index,1);
-        setCurrentOptions(changedOptions);
     }
 
     useEffect(()=>{
@@ -48,7 +44,7 @@ const EditOption = ({option, setCurrentOptions, index, changedOptions}:IEditOpti
             </div>
             <div className="flex justify-end">
                 <CustomButton
-                    onClick={()=> deleteOption()}
+                    onClick={()=> setCurrentOptions(deleteOption(changedOptions, index))}
                     className="mb-1"
                 >Delete</CustomButton>
             </div>

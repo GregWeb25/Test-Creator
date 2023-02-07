@@ -97,7 +97,7 @@ export  interface  IEditOptionsProps {
     currentOptions: IAnswerOption[],
     setCurrentOptions: (arg1: IAnswerOption[]) => void,
     changedOptions: IAnswerOption[],
-    addOption: () => void
+    addOption: (currentOptions: IAnswerOption[], changedOptions: IAnswerOption[]) => IAnswerOption[]
 }
 
 export interface ICustomButtonProps<T>{

@@ -11,6 +11,7 @@ import EditWeight from "./EditWeight";
 import EditText from "./EditText";
 import EditOptions from "./EditOptions";
 import CustomButton from "../../../ui/CustomButton";
+import addOption from "../../../../utils/addOption";
 
 const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
     const [currentText, setCurrentText] = useState<string>(test.text);
@@ -48,17 +49,6 @@ const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
 
             setModalHidden(true);
         }
-    }
-
-    const addOption = () => {
-        const newOption: IAnswerOption = {
-            id: currentOptions.length+1,
-            text: "enter the text here",
-            isRight: false,
-            isChecked: false
-        }
-        changedOptions.push(newOption);
-        setCurrentOptions(changedOptions);
     }
 
     return (
