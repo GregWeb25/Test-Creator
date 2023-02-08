@@ -1,7 +1,16 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ICheckingPayload, IConfirmingPayload, IEditTestPayload, ITest, TestTypes} from "../../models/models";
+import setAllAction from "./actions/setAllAction";
+import addAction from "./actions/addAction";
+import deleteAction from "./actions/deleteAction";
+import editAction from "./actions/editAction";
+import checkingAction from "./actions/checkingAction";
+import confirmingAction from "./actions/confirmingAction";
+
+export type TestState = ReturnType<typeof testsSlice.getInitialState >
 
 const tests: ITest[] = [
+
     {
     id: 0,
     text: "Choose the correct calculation result: 1 + 1 = ...",
@@ -89,65 +98,22 @@ const testsSlice = createSlice({
     initialState: initialTest,
     reducers: {
         setAllTests(state, action: PayloadAction<ITest[]>){
-            state.tests = action.payload;
+            setAllAction(state, action);
         },
         addTest(state, action: PayloadAction<ITest>) {
-            state.tests = [...state.tests, action.payload]
+            addAction(state, action);
         },
         deleteTest(state, action: PayloadAction<number>){
-            state.tests = state.tests.filter((test) => test.id === action.payload ? false : true);
+            deleteAction(state, action);
         },
         editTest(state, action: PayloadAction<IEditTestPayload>) {
-            state.tests[action.payload.index] = action.payload.test;
+            editAction(state, action);
         },
         checking(state, action: PayloadAction<ICheckingPayload>) {
-            let testPath = state.tests.find(test => test.id === action.payload.testId);
-            let optionPath = testPath?.answerOptions.find(answer => answer.id === action.payload.answerOptionsId);
-            let isChecked = optionPath?.isChecked;
-
-           optionPath!.isChecked = !isChecked;
-            if(testPath?.typeOfTest === TestTypes.single) {
-                testPath!.answerOptions.map(answer => {
-                    if(answer.id !== action.payload.answerOptionsId){
-                        answer.isChecked = false;
-                    }
-                });
-            }
+            checkingAction(state, action);
         },
-        confirming(state, action: PayloadAction<IConfirmingPayload>){
-            let testPath = state.tests.find(test => test.id === action.payload.testId);
-            let checkedRightOptionsCount = 0;
-            let rightOptionsCount = 0;
-            let wrongOptions = false;
-            switch (testPath!.typeOfTest){
-                case TestTypes.single: rightOptionsCount = 1;
-                break;
-                case TestTypes.multiple:
-                    testPath!.answerOptions.map(answer => {
-                        if(answer.isRight){
-                            rightOptionsCount++;
-                        }
-                    });
-            }
-            testPath!.answerOptions.map(answer => {
-                if(answer.isRight && answer.isChecked){
-                    checkedRightOptionsCount++;
-                }
-            });
-            testPath!.answerOptions.map(answer => {
-                if(!answer.isRight && answer.isChecked){
-                    wrongOptions = true;
-                }
-            });
-
-            if(checkedRightOptionsCount === rightOptionsCount && !wrongOptions){
-                testPath!.isFailed = false;
-                testPath!.isPassed = true;
-            } else {
-                testPath!.isPassed = false;
-                testPath!.isFailed = true;
-            }
-
+        confirming(state, action: PayloadAction<IConfirmingPayload>) {
+            confirmingAction(state, action);
         }
 
     }

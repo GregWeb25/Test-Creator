@@ -1,27 +1,17 @@
 import React from 'react';
-import {ITest, TestTypes} from "../../models/models";
+import {ITest} from "../../models/models";
 import {useSelector} from "react-redux";
 import {RootState} from "../../store";
-import SingleTest from "./SingleTestComponents/SingleTest";
-import MultipleTest from "./MultipleTestComponents/MultipleTest";
+import TestsItem from "./TestsItem";
 
 const TestsList = () => {
     const tests = useSelector((state: RootState )=> state.tests.tests);
     return (
         <div className="flex flex-col items-center   w-full text-gray-800 font-medium gap-2">
             {tests && tests.map((test: ITest, index: number) => {
-                switch (test.typeOfTest){
-                    case TestTypes.single:
-                        return (
-                            <SingleTest test={test} index={index} key={Date.now()+test.id}/>
-                        )
-                    break;
-                    case TestTypes.multiple:
-                        return (
-                            <MultipleTest test={test} index={index} key={Date.now()+test.id}/>
-                        )
-                    break;
-                }
+                return(
+                    <TestsItem key={Date.now() + test.id} test={test} index={index} />
+                )
             })}
 
         </div>

@@ -15,11 +15,7 @@ const ExportModule = () => {
     return (
         <div className="w-full">
             <h2>Export test:</h2>
-            <textarea
-                className="px-2 w-full h-32 py-1 border-gray-400"
-                value={dataJSON}
-                onChange={()=>{}}
-            ></textarea>
+            The data will be placed in the clipboard.
             <div
                 className="flex justify-end"
             >

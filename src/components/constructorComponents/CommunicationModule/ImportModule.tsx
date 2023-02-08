@@ -5,22 +5,18 @@ import parseData from "../../../utils/parseData";
 
 const ImportModule = () => {
     const dispatch = useAppDispatch();
-    const [text, setText] = useState('');
+    const [text, setText] = useState('The data must be in the clipboard')
 
     return (
         <div className="w-full">
             <h2>Import test:</h2>
-            <textarea
-                className="px-2 w-full h-32 py-1 border-gray-400"
-                placeholder="Enter JSON"
-                value={text}
-                onChange={(e)=>setText(e.target.value)}
-            ></textarea>
+            {text}
             <div
                 className="flex justify-end"
             >
                 <CustomButton
-                    onClick={()=>setText(parseData(text, dispatch))}
+                    className="mb-1"
+                    onClick={ async ()=> setText(await parseData(dispatch))}
                 >
                     Parse
                 </CustomButton>

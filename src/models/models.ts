@@ -106,3 +106,12 @@ export interface ICustomButtonProps<T>{
     className?: string,
     disabled?: boolean
 }
+
+export interface ITestFooterProps {
+    test: ITest
+}
+
+export  interface  ITestContentProps {
+    test: ITest,
+    index: number
+}
