@@ -27,4 +27,4 @@ const EditType = ({currentType, setCurrentType}:IEditTypeProps) => {
     );
 };
 
-export default EditType;
+export default React.memo(EditType);

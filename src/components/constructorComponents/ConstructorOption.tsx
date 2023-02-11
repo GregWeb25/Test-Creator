@@ -9,4 +9,4 @@ const ConstructorOption = ({option, test}:IOptionProps) => {
     );
 };
 
-export default ConstructorOption;
+export default React.memo(ConstructorOption);

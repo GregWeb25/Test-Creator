@@ -42,7 +42,7 @@ export interface ITestProps {
 
 export interface IOptionProps {
     option: IAnswerOption,
-    test: ITest,
+    test: ITest
 }
 
 export interface IResults {

@@ -9,4 +9,4 @@ const PreviewCommunicationModule = () => {
     );
 };
 
-export default PreviewCommunicationModule;
+export default React.memo(PreviewCommunicationModule);

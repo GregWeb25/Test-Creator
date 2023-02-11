@@ -18,4 +18,4 @@ const TestsItem = ({test, index}: ITestContentProps) => {
     }
 };
 
-export default TestsItem;
+export default  React.memo(TestsItem);

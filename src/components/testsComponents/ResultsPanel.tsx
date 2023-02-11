@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {useSelector} from "react-redux";
 import {RootState} from "../../store";
-import {ITest} from "../../models/models";
 import getTotalCount from "../../utils/getTotalCount";
 import getPercentage from "../../utils/getPercentage";
 import getStatus from "../../utils/getStatus";
@@ -38,4 +37,4 @@ const ResultsPanel = () => {
     );
 };
 
-export default ResultsPanel;
+export default  React.memo(ResultsPanel);

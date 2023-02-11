@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import CustomButton from "../../ui/CustomButton";
 import {useAppDispatch} from "../../../store/appDispatch";
 import parseData from "../../../utils/parseData";
 
 const ImportModule = () => {
     const dispatch = useAppDispatch();
-    const [text, setText] = useState('The data must be in the clipboard')
+    const [text, setText] = useState('The data must be in the clipboard');
 
     return (
         <div className="w-full">
@@ -26,4 +26,4 @@ const ImportModule = () => {
     );
 };
 
-export default ImportModule;
+export default React.memo(ImportModule);

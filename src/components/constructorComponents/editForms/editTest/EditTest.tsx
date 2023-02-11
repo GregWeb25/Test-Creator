@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 import {IAnswerOption, IEditTestProps, ITest} from "../../../../models/models";
 import {useAppDispatch} from "../../../../store/appDispatch";
 import {editTest} from "../../../../store/tests/testsReducer";
@@ -23,7 +23,7 @@ const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
     const [warningModalHidden, setWarningModalHidden] = useState<boolean>(true);
     const [warningText, setWarningText] = useState<string>("")
 
-    const saveTest = () => {
+    const saveTest = useCallback( () => {
         let {isWarning, text} = chechWarnings( currentType, changedOptions);
 
         if(isWarning){
@@ -48,8 +48,10 @@ const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
             }));
 
             setModalHidden(true);
+            return 0;
         }
-    }
+    },[currentOptions, currentType])
+
 
     return (
         <div className="w-full bg-white px-3 py-2">
@@ -73,4 +75,4 @@ const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
     );
 };
 
-export default EditTest;
+export default React.memo(EditTest);

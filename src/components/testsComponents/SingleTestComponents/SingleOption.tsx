@@ -16,4 +16,4 @@ const SingleOption = ({option, test}: IOptionProps) => {
     );
 };
 
-export default SingleOption;
+export default React.memo(SingleOption);

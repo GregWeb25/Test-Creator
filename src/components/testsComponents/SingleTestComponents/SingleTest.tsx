@@ -28,4 +28,4 @@ const SingleTest = ({test, index}: ITestProps) => {
     );
 };
 
-export default SingleTest;
+export default React.memo( SingleTest);

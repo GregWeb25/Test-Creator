@@ -16,4 +16,4 @@ const ConstructorTestList = () => {
     );
 };
 
-export default ConstructorTestList;
+export default React.memo(ConstructorTestList);

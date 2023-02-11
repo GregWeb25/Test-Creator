@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {ICustomButtonProps} from "../../models/models";
 
 const CustomButton = ({onClick, children, className, disabled}:ICustomButtonProps<any>) => {
-    const  defaultClasses = "bg-blue-500 px-2 py-1 text-white font-bold ";
-    const classes = className ? defaultClasses.concat(className) : defaultClasses;
+    const  defaultClasses = " bg-blue-500 px-2 py-1 text-white font-bold ";
+    const classes = className ? defaultClasses.concat(className) : defaultClasses
+
     return (
         <button
             disabled={disabled}
@@ -14,4 +15,4 @@ const CustomButton = ({onClick, children, className, disabled}:ICustomButtonProp
     );
 };
 
-export default CustomButton;
+export default React.memo(CustomButton);

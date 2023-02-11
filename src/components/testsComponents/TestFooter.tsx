@@ -19,4 +19,4 @@ const TestFooter = ({test}:ITestFooterProps) => {
     );
 };
 
-export default TestFooter;
+export default  React.memo(TestFooter);

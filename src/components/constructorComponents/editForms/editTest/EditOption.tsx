@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {memo, useEffect, useRef, useState} from 'react';
 import { IEditOptionProps} from "../../../../models/models";
 import CustomButton from "../../../ui/CustomButton";
 import deleteOption from "../../../../utils/deleteOption";
@@ -13,7 +13,6 @@ const EditOption = ({option, setCurrentOptions, index, changedOptions}:IEditOpti
             input.current!.focus();
         },1);
     }
-
     useEffect(()=>{
         changedOptions[index] = {...changedOptions[index], text: text, isRight: isRight}
     },[text, isRight])
@@ -52,4 +51,4 @@ const EditOption = ({option, setCurrentOptions, index, changedOptions}:IEditOpti
     );
 };
 
-export default EditOption;
+export default  React.memo(EditOption);

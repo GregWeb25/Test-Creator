@@ -2,7 +2,6 @@ import React from 'react';
 import {IWarningModalProps} from "../../models/models";
 
 const WarningModal = ({text, setWarningModalHidden}:IWarningModalProps) => {
-
     return (
         <div className="w-full bg-white px-3 py-2">
             <div className="font-bold text-orange-500">Warning:</div>
@@ -19,4 +18,4 @@ const WarningModal = ({text, setWarningModalHidden}:IWarningModalProps) => {
     );
 };
 
-export default WarningModal;
+export default React.memo(WarningModal);

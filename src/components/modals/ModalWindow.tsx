@@ -27,4 +27,4 @@ const ModalWindow = ({isHidden, children, hide}: IModalWindowProps) => {
     );
 };
 
-export default ModalWindow;
+export default  React.memo(ModalWindow);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 const EditId = ({id}:{id: number}) => {
     return (
@@ -8,4 +8,4 @@ const EditId = ({id}:{id: number}) => {
     );
 };
 
-export default EditId;
+export default React.memo(EditId);

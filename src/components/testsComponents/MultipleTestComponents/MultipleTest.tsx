@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {IAnswerOption, ITestProps} from "../../../models/models";
 import MultipleOption from "./MultipleOption";
 import TestFooter from "../TestFooter";
@@ -8,8 +8,14 @@ const MultipleTest = ({test,  index}:ITestProps) => {
     let classes = "bg-white w-[80%] py-1 px-2";
     const failedClasses = " bg-red-300";
     const successClasses = " bg-green-400";
-    if(test.isPassed) classes = classes + successClasses;
-    if(test.isFailed) classes = classes + failedClasses;
+
+    const styleCheck = useCallback(()=>{
+        if(test.isPassed) classes = classes + successClasses;
+        if(test.isFailed) classes = classes + failedClasses;
+    },[test.isPassed, test.isFailed])
+
+    styleCheck();
+
     return (
         <div className={classes}>
             <TestContent test={test} index={index}/>
@@ -25,4 +31,4 @@ const MultipleTest = ({test,  index}:ITestProps) => {
     );
 };
 
-export default MultipleTest;
+export default  React.memo(MultipleTest);

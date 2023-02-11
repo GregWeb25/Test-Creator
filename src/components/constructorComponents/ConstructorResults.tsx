@@ -33,7 +33,7 @@ const ConstructorResults = () => {
             </div>
             <div>
                 <CustomButton
-                    className={!isValid(inputText) ? "bg-red-500" : ""}
+                    className={!isValid(inputText) ? "!bg-red-500" : ""}
                     disabled={!isValid(inputText)}
                     onClick={()=>dispatch(setEnough(Number(inputText)))}
                 >
@@ -44,4 +44,4 @@ const ConstructorResults = () => {
     );
 };
 
-export default ConstructorResults;
+export default React.memo(ConstructorResults);

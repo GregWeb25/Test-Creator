@@ -18,4 +18,4 @@ const EditWeight = ({currentWeight,setCurrentWeight}:IEditWeightProps) => {
     );
 };
 
-export default EditWeight;
+export default React.memo(EditWeight);

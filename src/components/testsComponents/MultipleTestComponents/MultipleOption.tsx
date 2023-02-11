@@ -16,4 +16,4 @@ const MultipleOption = ({option, test}: IOptionProps) => {
     );
 };
 
-export default MultipleOption;
+export default  React.memo(MultipleOption);

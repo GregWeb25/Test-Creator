@@ -26,4 +26,4 @@ const ConstructorPage = () => {
     );
 };
 
-export default ConstructorPage;
+export default React.memo(ConstructorPage);

@@ -45,4 +45,4 @@ const ConstructorTestItem = ({test, index}: ITestProps) => {
     );
 };
 
-export default ConstructorTestItem;
+export default React.memo(ConstructorTestItem);

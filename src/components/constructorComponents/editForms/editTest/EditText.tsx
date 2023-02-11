@@ -18,4 +18,4 @@ const EditText = ({currentText,setCurrentText}:IEditTextProps) => {
     );
 };
 
-export default EditText;
+export default React.memo(EditText);

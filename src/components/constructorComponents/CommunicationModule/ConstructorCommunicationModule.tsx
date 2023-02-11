@@ -11,4 +11,4 @@ const ConstructorCommunicationModule = () => {
     );
 };
 
-export default ConstructorCommunicationModule;
+export default React.memo(ConstructorCommunicationModule);

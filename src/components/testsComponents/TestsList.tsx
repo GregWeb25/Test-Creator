@@ -18,4 +18,4 @@ const TestsList = () => {
     );
 };
 
-export default TestsList;
+export default  React.memo(TestsList);

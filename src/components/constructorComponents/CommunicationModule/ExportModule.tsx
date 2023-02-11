@@ -29,4 +29,4 @@ const ExportModule = () => {
     );
 };
 
-export default ExportModule;
+export default React.memo(ExportModule);

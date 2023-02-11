@@ -12,4 +12,4 @@ const PreviewPage = () => {
     )
 };
 
-export default PreviewPage;
+export default React.memo( PreviewPage);
