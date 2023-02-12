@@ -50,7 +50,7 @@ const EditTest = ({test, index ,setModalHidden}:IEditTestProps) => {
             setModalHidden(true);
             return 0;
         }
-    },[currentOptions, currentType])
+    },[currentOptions, currentType, currentText, currentWeight])
 
 
     return (

@@ -5,7 +5,7 @@ import parseData from "../../../utils/parseData";
 
 const ImportModule = () => {
     const dispatch = useAppDispatch();
-    const [text, setText] = useState('The data must be in the clipboard');
+    const [text, setText] = useState('The data must be in the clipboard.');
 
     return (
         <div className="w-full">
