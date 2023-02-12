@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+# Test-creator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Краткое описание
 
-## Available Scripts
+<p>
+В рамках данного проекта я создаю небольшую онлайн-платформу для создания тестовых заданий.
+</p>
 
-In the project directory, you can run:
+## Стек технологий
 
-### `npm start`
+<p>
+Данный проект выполнен в виде автономного пользовательского SPA приложения и не имеет серверной части.
+</p>
+<p>
+При разработке приложения использовалась библиотека react.js. В качестве менеджера состояний был использован Redux, а именно Redux Toolkit, данный набор инструментов существенно упрощает работу с хранилищем. Все react компоненты, элементы хранилища и вспомогательные функции написаны на typescript в угоду строгой типизации. Для упрощения процесса вёрстки компонентов была использована css библиотека Tailwind. 
+</p>
+<p>
+  <img src=""/>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Пользовательский интерфейс и работа приложения
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p>
+  Пользовательский интерфейс приложения представляет из себя панель навигации и основную часть страницы, где размещается контент. В панели навигации имеются две вкладки: предпросмотр и конструктор. 
+</p>
 
-### `npm test`
+<p>
+  <img src=""/>
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>
+  Основной частью приложения является конструктор. Тут можно создавать, редактировать и удалять тестовые задания. Кроме того можно указывать процент очков, необходимых для прохождения теста, если в поле указано недопустимое значение, то пользователь увидит сообщение об этом и не сможет нажать кнопку изменения.  
+</p>
 
-### `npm run build`
+<p>
+  <img src=""/>
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>
+  <img src=""/>
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p>
+  В редакторе тестовых заданий можно указывать вес задания (сколько очков дается за правильный ответ), тип задания (множественный или одиночный ответ), редактировать текст задания, а также создавать и удалять варианты ответов, отмечать, какие из них являются правильными и редактировать их текст. id теста назначается автоматически при его создании. Если количество правильных ответав не будет совпадать с типом задания, либо их не будет вообще, то пользователь получит соответствуещее предупреждение и изменения не будут сохранены. 
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p>
+  <img src=""/>
+</p>
 
-### `npm run eject`
+<p>
+  <img src=""/>
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p>
+  В панели коммуникации имеется 2 пункта: импорт и экспорт. При экспорте тестов все данные помещаются в буфер обмена в формате JSON. При импорте данные считываются из буфера обмена, если с данными что-то не так, то пользователь увидит соответствующее предупреждение и данные не будут считаны.
+</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p>
+  <img src=""/>
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p>
+  Во вкладке предпросмотра пользователь может проверить работу созданных тестовых заданий.
+</p>
