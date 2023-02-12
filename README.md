@@ -15,7 +15,7 @@
 При разработке приложения использовалась библиотека react.js. В качестве менеджера состояний был использован Redux, а именно Redux Toolkit, данный набор инструментов существенно упрощает работу с хранилищем. Все react компоненты, элементы хранилища и вспомогательные функции написаны на typescript в угоду строгой типизации. Для упрощения процесса вёрстки компонентов была использована css библиотека Tailwind. 
 </p>
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/stack.jpg" />
 </p>
 
 ## Пользовательский интерфейс и работа приложения
@@ -25,7 +25,7 @@
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/nav.jpg" />
 </p>
 
 <p>
@@ -33,11 +33,11 @@
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/constructor.jpg" />
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/wrong-enough.jpg" />
 </p>
 
 <p>
@@ -45,11 +45,11 @@
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/edit-test.jpg" />
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/warning.jpg" />
 </p>
 
 <p>
@@ -57,7 +57,7 @@
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/comm.jpg" />
 </p>
 
 <p>
@@ -65,15 +65,15 @@
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/preview.png" />
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/results.png" >
 </p>
 
 <p>
-  <img src=""/>
+  <img src="https://github.com/GregWeb25/Test-Creator/blob/main/md-imgs/full-prev.jpg" />
 </p>
 
 <p>
